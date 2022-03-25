@@ -22,7 +22,7 @@ export default {
 <style>
 div.recoproducts{
     width: 46%;
-    margin: 5% 2%;
+    margin: 3% 2%;
     position: relative;
     border: 1px solid blue;
     padding: 5px;

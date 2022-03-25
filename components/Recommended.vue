@@ -38,6 +38,13 @@ export default {
 </script>
 
 <style>
+    .recomendHeader{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 20px auto;
+        width: 90%;
+    }
     .recoProductsBox{
         display: flex;
         flex-wrap: wrap;

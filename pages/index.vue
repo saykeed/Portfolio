@@ -9,6 +9,14 @@
             :visibleSlide="visibleSlide"
             :slideName="slideName"
           />
+          <Sliderinfo 
+            v-for="(banner, index) in banners"
+            :key="banner.img"
+            :banner="banner"
+            :index="index"
+            :visibleSlide="visibleSlide"
+            :slideName="slideName"
+          />
           <div class="slider_indicator">
             <span v-for="(banner, index) in banners" 
               :key="banner.index"

@@ -2,7 +2,7 @@
     <transition :name="slideName" move>
         <div v-show="index == visibleSlide" class="slider">
             <img :src="banner.img" alt="">
-            <Sliderinfo :banner="banner"/>
+            
         </div>
     </transition>
 </template>
