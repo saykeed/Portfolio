@@ -5,7 +5,7 @@
         <Footer class="default_footer"/>
     </div>
 </template>
-<style>
+<style scoped>
     .default{
         position: relative;
     }
