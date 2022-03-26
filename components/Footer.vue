@@ -18,7 +18,7 @@ export default {
                 {text: 'Home', icon: 'home', route: '/'},
                 {text: 'Categories', icon: 'dashboard', route: '/Category'},
                 {text: 'Wishlist', icon: 'favorite_border', route: '/Wishlist'},
-                {text: 'Account', icon: 'account_circle', route: '/signup'}
+                {text: 'Account', icon: 'account_circle', route: '/Account'}
             ]
         }
     }
@@ -27,6 +27,7 @@ export default {
 
 <style>
     .footer{
+        height: 70px;
         display: flex;
         align-items: center;
         justify-content: space-between;
