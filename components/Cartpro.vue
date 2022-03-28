@@ -17,11 +17,11 @@
                   REMOVE
               </p>
           </div>
-          <p>test{{ quantity }}</p>
+          
           <div class="quantity_control">
-              <button class="minus">-</button>
-              <div class="quantity" >1</div>
-              <button class="minus">+</button>
+              <button @click="minusQuantity" class="add">-</button>
+              <div class="quantity" >{{ quantity }}</div>
+              <button @click="addQuantity" class="minus">+</button>
           </div>
       </div>
   </div>
@@ -32,8 +32,26 @@ export default {
     props: ['product'],
     data () {
         return {
-            quantity: ''
+            quantity: 1
         }
+    },
+    methods: {
+        addQuantity() {
+            this.quantity++
+            this.$emit('addUpdatePrice', this.product.price)
+        },
+        minusQuantity() {
+            if(this.quantity <= 1) {
+                alert('Minimum reached')
+            } else{
+                this.quantity--
+                this.$emit('minusUpdatePrice', this.product.price)
+            }
+            
+        }
+    },
+    mounted() {
+        this.$emit('updatePrice', this.product.price)
     }
 }
 </script>
@@ -64,7 +82,7 @@ export default {
     }
     .lower{
         height: 50px;
-        border-top: 1px solid rgba(0, 0, 0, 0.316);
+        border-top: 1px solid rgba(0, 0, 0, 0.234);
         padding: 10px;
         display: flex;
         align-items: center;
