@@ -35,6 +35,23 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    [
+      '@nuxtjs/firebase',
+      {
+        config: {
+          apiKey: "AIzaSyAOVtJqmJK7Rmpl_3ZcElziV8GPGh2u6Ow",
+          authDomain: "shopify-6514a.firebaseapp.com",
+          projectId: "shopify-6514a",
+          storageBucket: "shopify-6514a.appspot.com",
+          messagingSenderId: "766752837527",
+          appId: "1:766752837527:web:6e7d824efd03cc2b25bed2",
+          measurementId: "G-H7VPX1ZB52"
+        },
+        services: {
+          auth: true // Just as example. Can be any other service.
+        }
+      }
+    ]
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
