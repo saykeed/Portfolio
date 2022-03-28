@@ -51,7 +51,7 @@ export default {
   }
   .accountWrap{
     width: 80%;
-    margin: 60px auto 20px;
+    margin: 60px auto;
     
   }
   .accountHolder{

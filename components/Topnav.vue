@@ -18,6 +18,7 @@ export default {
         align-items: center;
         justify-content: space-between;
         height: 60px;
+        width: 100%;
         background: white;
         box-shadow: 4px 0px 13px rgba(0,0,0,0.400);
         padding: 0 3%;

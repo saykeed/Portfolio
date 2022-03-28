@@ -8,6 +8,7 @@
 <style scoped>
     .default{
         position: relative;
+        width: 100%;
     }
     .default_topnav{
         position: fixed;
