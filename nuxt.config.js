@@ -13,7 +13,8 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {href:"https://fonts.googleapis.com/icon?family=Material+Icons", rel:"stylesheet"}
+      {href:"https://fonts.googleapis.com/icon?family=Material+Icons", rel:"stylesheet"},
+      {href:"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css", rel:"stylesheet"}
     ]
   },
  
@@ -49,7 +50,8 @@ export default {
         },
         services: {
           auth: true // Just as example. Can be any other service.
-        }
+        },
+        lazy: true
       }
     ]
   ],

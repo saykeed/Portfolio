@@ -4,47 +4,78 @@
           Create Account
           <i class="material-icons" @click="$router.back()">close</i>
       </div>
-      <p>Sign Up with:</p>
-      <div class="signupBtn">
-          <div><img src="@/assets/img/google_svg.png" alt=""></div>
-          <div><img src="@/assets/img/facebook_logo.jpg" alt=""></div>
+      <div class="signupWrap">
+            <p>Sign Up with:</p>
+            <div class="signupBtn">
+                <div><img src="@/assets/img/google_svg.png" alt=""></div>
+                <div><img src="@/assets/img/facebook_logo.jpg" alt=""></div>
+            </div>
+            <p>Or Continue with Email:</p>
+            <form class="signupForm" @submit.prevent="register">
+                <p>Email Address</p>
+                <input type="email" name="email" v-model="email" required>
+                <p>Password</p>
+                <input type="password" name="password" v-model="password" required>
+                <button>Create Account</button>
+            </form>
+            <p class="already">Already have an account? <NuxtLink to="/login"> Log in</NuxtLink></p>
       </div>
-      <p>Or Continue with Email:</p>
-      <form class="signupForm">
-          <p>Email Address</p>
-          <input type="email" name="email" required>
-          <p>Password</p>
-          <input type="password" name="password" required>
-          <button>Create Account</button>
-      </form>
-      <p class="already">Already have an account? <NuxtLink to="/login"> Log in</NuxtLink></p>
+      
+      
   </div>
 </template>
 
 <script>
 export default {
-layout: 'nonav',
+    layout: 'nonav',
+    data() {
+        return{
+            email: '',
+            password: ''
+        }
+    },
+    methods: {
+        regUser(user) {
+            alert('account created successful')
+            this.$router.push('/')
+        },
+        regError(err) {
+            alert(err)
+            //console.log(err)
+        },
+        register() {
+            this.$fire.auth.createUserWithEmailAndPassword(this.email, this.password)
+            .then(user => this.regUser(user))
+            .catch(err => this.regError(err))
+        }
+    }
 }
 </script>
 
 <style scoped>
 .signup{
-    border: 1px solid red;
     width: 90%;
     margin: 0 auto;
     text-align: center;
     height: 100vh;
+    position: relative;
 }
 .signupHeader{
     position: relative;
     text-align: center;
-    margin: 20px auto 70px;
+    margin: 20px auto;
 }
 .signupHeader i{
     position: absolute;
     top: 0;
     left: 0;
     cursor: pointer;
+}
+.signupWrap{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
 }
 .signupBtn{
     display: flex;

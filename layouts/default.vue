@@ -1,14 +1,37 @@
 <template>
     <div class="default">
-        <Topnav class="default_topnav"/>
+        <Sidebar class="default_sidebar" v-if="showSidebar" @emitCloseSidebar="controlSidebar"/>
+        <Topnav class="default_topnav" @togSidebar="controlSidebar"/>
         <Nuxt class="webPages"/>
         <Footer class="default_footer"/>
     </div>
 </template>
+
+<script>
+export default {
+    data() {
+        return{
+            showSidebar: false
+        }
+    },
+    methods: {
+        controlSidebar() {
+            this.showSidebar = !this.showSidebar
+        }
+    }
+}
+</script>
+
 <style scoped>
     .default{
         position: relative;
         width: 100%;
+    }
+    .default_sidebar{
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999999;
     }
     .default_topnav{
         position: fixed;

@@ -11,12 +11,12 @@
                 <div><img src="@/assets/img/facebook_logo.jpg" alt=""></div>
             </div>
             <p>Or Continue with Email</p>
-            <form class="loginForm">
+            <form class="loginForm" @submit.prevent="login">
                 <p>Email Address</p>
-                <input type="email" name="email" required>
+                <input type="email" name="email" v-model="email" required>
                 <p>Password</p>
                 <div class="passwordBox">
-                    <input type="password" name="password" required>
+                    <input type="password" name="password" v-model="password" required>
                     <i class="material-icons" >remove_red_eye</i>
                 </div>
                 <button>Log In</button>
@@ -28,7 +28,28 @@
 
 <script>
 export default {
-layout: 'nonav'
+    layout: 'nonav',
+    data() {
+        return{
+            email: '',
+            password: ''
+        }
+    },
+    methods: {
+        regUser(user) {
+            alert('logged in successful')
+            this.$router.push('/')
+        },
+        regError(err) {
+            alert(err)
+            //console.log(err)
+        },
+        login() {
+            this.$fire.auth.signInWithEmailAndPassword(this.email, this.password)
+            .then(user => this.regUser(user))
+            .catch(err => this.regError(err))
+        }
+    }
 }
 </script>
 
@@ -36,7 +57,6 @@ layout: 'nonav'
     .login{
         height: 100vh;
         position: relative;
-        border: 1px solid red;
         width: 90%;
         margin: 0 auto;
     }

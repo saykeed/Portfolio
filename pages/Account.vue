@@ -20,7 +20,7 @@
         <p> <i class="material-icons">{{ option.icon }}</i> {{ option.text }}</p>
         <i class="material-icons">chevron_right</i>
       </div>
-        <p class="logout"> <i class="material-icons">exit_to_app</i>Log out</p>
+        <p @click="logout" class="logout"> <i class="material-icons">exit_to_app</i>Log out</p>
     </div>
   </div>
 </template>
@@ -37,6 +37,13 @@ export default {
         {text: 'Payment details', icon: 'credit_card'},
         {text: 'Need help? Contact us', icon: 'help'}
       ]
+    }
+  },
+  methods: {
+    logout() {
+      this.$fire.auth.signOut()
+      .then(user => alert(user + 'logout succesfully'))
+      .catch(err => alert(err))
     }
   }
 }
