@@ -7,14 +7,65 @@
         </NuxtLink>
         <p class="title">{{ product.title }}</p>
         <p class="price">${{ product.price }} <i class="material-icons">shopping_cart</i></p> 
-        <i class="material-icons wish" >favorite_border</i>
+        <i class="material-icons wish" @click="favControl(product.id)">{{ wish }}</i>
     </div>
     
 </template>
 
 <script>
 export default {
-    props: ['product']
+    props: ['product'],
+    data() {
+        return {
+            fav: false
+        }
+    },
+    methods: {
+        // functions that saves to local storage
+        saveToLS (id) {
+            if (!localStorage.getItem('favorites')) {
+                localStorage.setItem('favorites', '[]')
+            }
+            let oldData = JSON.parse(localStorage.getItem('favorites'))
+            oldData.push(id)
+            
+            localStorage.setItem('favorites', JSON.stringify(oldData))
+        },
+        // function that deletes from local storage
+        deleteFromLS (id) {
+            let favs = JSON.parse(localStorage.getItem('favorites'))
+            localStorage.setItem('favorites', JSON.stringify(favs.filter(favId => favId !== id)))
+        },
+        // function that controls whether to add or delete from local storage
+        favControl(id) {
+            let favs = JSON.parse(localStorage.getItem('favorites'))
+            if (favs.includes(id)) {
+                this.deleteFromLS(id)
+                this.fav = false
+            } else {
+                this.saveToLS(id)
+                this.fav = true
+            }
+            
+        }
+    },
+    computed: {
+        wish() {
+            if (this.fav) {
+                return 'favorite'
+            } else {
+                return 'favorite_border'
+            }
+        }
+    },
+    mounted() {
+        let favs = JSON.parse(localStorage.getItem('favorites'))
+        if (favs !== null && favs.includes(this.product.id)) {
+            this.fav = true
+        } else {
+            this.fav = false
+        }
+    }
 
 }
 </script>
@@ -24,7 +75,6 @@ div.recoproducts{
     width: 46%;
     margin: 3% 2%;
     position: relative;
-    border: 1px solid blue;
     padding: 5px;
 }
 .recoproducts i.wish{
@@ -42,7 +92,7 @@ div.recoproducts{
     background: rgba(250, 250, 250, 0.159);
     transition: all .5s ease-in-out
 }
-.recoproducts i.wish:hover{
+.recoproducts i.wish:active{
     background: transparent;
     animation: stagger 1s ease-in-out;
 }

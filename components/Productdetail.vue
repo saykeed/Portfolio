@@ -21,7 +21,7 @@
         <button class="readMore" @click="toggleDesc">Read More</button>
         <div class="cartBtnDiv">
             <button class="cartBtn">Add to Cart</button>
-            <button class="favBtn"><i class="material-icons" >favorite_border</i></button>
+            <button class="favBtn" @click="favControl(details.id)"><i class="material-icons" >{{ wish }}</i></button>
         </div>
   </div>
 </template>
@@ -32,12 +32,40 @@ export default {
     data() {
         return{
             description: this.details.description,
-            fullDesc: false
+            fullDesc: false,
+            fav: true
         }
     },
     methods:{
         toggleDesc() {
             this.fullDesc = !this.fullDesc
+        },
+        // functions that saves to local storage
+        saveToLS (id) {
+            if (!localStorage.getItem('favorites')) {
+                localStorage.setItem('favorites', '[]')
+            }
+            let oldData = JSON.parse(localStorage.getItem('favorites'))
+            oldData.push(id)
+            
+            localStorage.setItem('favorites', JSON.stringify(oldData))
+        },
+        // function that deletes from local storage
+        deleteFromLS (id) {
+            let favs = JSON.parse(localStorage.getItem('favorites'))
+            localStorage.setItem('favorites', JSON.stringify(favs.filter(favId => favId !== id)))
+        },
+        // function that controls whether to add or delete from local storage
+        favControl(id) {
+            let favs = JSON.parse(localStorage.getItem('favorites'))
+            if (favs.includes(id)) {
+                this.deleteFromLS(id)
+                this.fav = false
+            } else {
+                this.saveToLS(id)
+                this.fav = true
+            }
+            
         }
     },
     computed: {
@@ -50,6 +78,21 @@ export default {
             } else{
                 return this.description
             } 
+        },
+        wish() {
+            if (this.fav) {
+                return 'favorite'
+            } else {
+                return 'favorite_border'
+            }
+        }
+    },
+    mounted() {
+        let favs = JSON.parse(localStorage.getItem('favorites'))
+        if (favs !== null && favs.includes(this.details.id)) {
+            this.fav = true
+        } else {
+            this.fav = false
         }
     }
 }
