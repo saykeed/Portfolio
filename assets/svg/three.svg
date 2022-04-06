@@ -1,0 +1,11 @@
+<svg className="writings-svg" width="150" height="150" viewBox="0 0 543 644" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <g id="Canvas" transform="translate(1534 -1244)">
+      <g id="Ellipse 4">
+      </g>
+      </g>
+      <linearGradient id="paint3_linear" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(224 -606 606.001 224 -117.303 520)">
+      <stop offset="0" stop-color="#F43C00"/>
+      <stop offset="1" stop-color="#FF8A00"/>
+      </linearGradient>
+      <path fill="url(#paint3_linear)" d="M 461.697 310.5C 425.697 398 785.697 544 223.697 644C 58.0115 644 -4.30269 455.835 145.697 310.5C 253.698 205.858 -313.303 85 262.697 0C 534.697 0 493.697 152.5 461.697 310.5Z"/>
+    </svg>

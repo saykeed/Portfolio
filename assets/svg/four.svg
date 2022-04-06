@@ -1,0 +1,11 @@
+<svg className="contact-svg" width="160" height="160" viewBox="0 0 607 586" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <g id="Canvas" transform="translate(1489 -1112)">
+      <g id="Ellipse 5">
+      </g>
+      </g>
+      <linearGradient id="paint4_linear" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(243.082 578.945 -578.944 299.385 324.921 -143.295)">
+      <stop offset="0" stop-color="#4500B5"/>
+      <stop offset="1" stop-color="#AA00AD"/>
+      </linearGradient>
+      <path fill="url(#paint4_linear)" d="M 437.204 395.6C 327.081 529.342 337.472 585.342 179.177 585.342C 20.8817 585.342 36.6558 513.342 36.6558 328.465C -21.4687 103.342 -27.4688 -0.000180245 146.696 2.35782e-10C 492.531 139.342 812.886 -60.6582 437.204 395.6Z"/>
+    </svg>

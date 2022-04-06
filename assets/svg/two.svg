@@ -1,0 +1,11 @@
+<svg className="projects-svg" width="140" height="140" viewBox="0 0 1132 1261" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <g id="Canvas" transform="translate(1544 1749)">
+    <g id="Ellipse 2">
+    </g>
+    </g>
+    <linearGradient id="paint2_linear" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(852 -1132 1193.52 898.303 -317.715 715.604)">
+    <stop offset="0" stop-color="#FC4961"/>
+    <stop offset="1" stop-color="#6E0D1A" stop-opacity="0.65"/>
+    </linearGradient>
+    <path fill="url(#paint2_linear)" d="M 1131.05 108.756C 1131.05 413.617 912.476 1260.16 591.046 1260.16C 269.617 1260.16 67.0459 1177.62 67.0459 872.756C 67.0459 567.895 -142.384 236.756 179.046 236.756C 500.476 236.756 1131.05 -196.105 1131.05 108.756Z"/>
+    </svg>
