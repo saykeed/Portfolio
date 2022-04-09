@@ -4,7 +4,7 @@
         <p>
             I was tired of switching between browser, code editor, To-do app and a Timer app. So I created Nest Tab.
         </p>
-        <img src="@/assets/img/portimg.jpg" alt="">
+        <img src="@/assets/img/portimg.JPG" alt="">
         <div class="portBtn">
             <NuxtLink to="/">Live Demo</NuxtLink>
             <NuxtLink to="/">Code on Github</NuxtLink>
