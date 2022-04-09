@@ -1,12 +1,16 @@
 <template>
   <div class="header">
-      <i class="material-icons">arrow_back</i>
+      <i class="material-icons" @click="backHome">arrow_back</i>
   </div>
 </template>
 
 <script>
 export default {
-
+    methods: {
+        backHome() {
+            this.$router.push('/')
+        }
+    }
 }
 </script>
 

@@ -23,7 +23,7 @@ export default {
 
 <style scoped>
     .aboutProject{
-        background-image: url('@/assets/svg/two.svg');
+        background-image: url('@/assets/svg/project.svg');
         background-repeat: no-repeat;
         background-size: 600%;
         background-position: center;

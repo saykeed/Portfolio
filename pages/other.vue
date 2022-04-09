@@ -12,7 +12,7 @@ export default {
 
 <style scoped>
     body{
-        background-image: url('@/assets/svg/three.svg');
+        background-image: url('@/assets/svg/other.svg');
         background-repeat: no-repeat;
         background-size: 600%;
         background-position: center;

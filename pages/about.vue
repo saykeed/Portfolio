@@ -32,7 +32,7 @@ export default {
 
 <style scoped>
     .aboutBody{
-        background-image: url('@/assets/svg/one.svg');
+        background-image: url('@/assets/svg/about.svg');
         background-repeat: no-repeat;
         background-size: 600%;
         background-position: center;

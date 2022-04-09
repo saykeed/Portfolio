@@ -38,7 +38,7 @@ export default {
 
 <style scoped>
     .aboutContact{
-        background-image: url('@/assets/svg/four.svg');
+        background-image: url('@/assets/svg/contact.svg');
         background-repeat: no-repeat;
         background-size: 600%;
         background-position: center;

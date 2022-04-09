@@ -23,22 +23,29 @@ export default {
   data() {
     return {
       links: [
-        {head: 'I\'m Sherif', para: 'I\'m a Fronte-end Developer. Click to know more.', route: '/about', svgClass: 'one'},
-        {head: 'Projects and Contribution', para: 'Check out some of the projects I loved working on.', route: '/project', svgClass: 'two'},
-        // {head: 'Writings', para: 'Check out some of my writings.', route: '/other', svgClass: 'three'},
-        {head: 'Get in touch!', para: 'I\'m friendly, Let\'s talk!.', route: '/contact', svgClass: 'four'}
+        {head: 'I\'m Sherif', para: 'I\'m a Fronte-end Developer. Click to know more.', route: '/about', svgClass: 'about'},
+        {head: 'Projects and Contribution', para: 'Check out some of the projects I loved working on.', route: '/project', svgClass: 'project'},
+        // {head: 'Writings', para: 'Check out some of my writings.', route: '/other', svgClass: 'other'},
+        {head: 'Get in touch!', para: 'I\'m friendly, Let\'s talk!.', route: '/contact', svgClass: 'contact'}
       ]
     }
   },
   methods: {
+     routeToPage(page) {
+      this.$router.push(page)
+    },
+    // where x stands for the route path and classname for each svg
     async routePage(x) {
       await gsap.to("img." + x, {
-        scale: 5,
-        duration: 3,
-        ease: 'linear'
+        scale: 30,
+        duration: 0.5,
+        onComplete: this.routeToPage,
+        onCompleteParams: [x]
+        
       })
-      this.$router.push('/about')
+      // this.$router.push('/about')
     }
+   
   }
   
 }
@@ -85,21 +92,22 @@ export default {
       width: 100px;
       position: absolute;
       transition: all 1s ease-in-out;
+      z-index: -1;
     }
 
-    .index img.one{
+    .index img.about{
       top: -80px;
       left: 0
     }
-    .index img.two{
+    .index img.project{
       top: -80px;
       right: 0
     }
-    .index img.three{
+    .index img.other{
       bottom: -80px;
       left: 0
     }
-    .index img.four{
+    .index img.contact{
       bottom: -80px;
       right: 0
     }
