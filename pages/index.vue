@@ -23,8 +23,8 @@ export default {
   data() {
     return {
       links: [
-        {head: 'I\'m Sherif', para: 'I\'m a Fronte-end Developer. Click to know more.', route: '/about', svgClass: 'about'},
-        {head: 'Projects and Contribution', para: 'Check out some of the projects I loved working on.', route: '/project', svgClass: 'project'},
+        {head: 'I\'m Sherif', para: 'I\'m a Front-end Developer. Click to know more.', route: '/about', svgClass: 'about'},
+        {head: 'Projects and Contribution', para: 'Check out some of the projects I have worked on.', route: '/project', svgClass: 'project'},
         // {head: 'Writings', para: 'Check out some of my writings.', route: '/other', svgClass: 'other'},
         {head: 'Get in touch!', para: 'I\'m friendly, Let\'s talk!.', route: '/contact', svgClass: 'contact'}
       ]
@@ -36,14 +36,17 @@ export default {
     },
     // where x stands for the route path and classname for each svg
     async routePage(x) {
-      await gsap.to("img." + x, {
+      await gsap.fromTo("img." + x, {
+        scale: 1,
+        duration: 0,
+      }, {
         scale: 30,
-        duration: 0.5,
+        duration: 0.7,
         onComplete: this.routeToPage,
+        ease: "power4.inOut",
         onCompleteParams: [x]
         
       })
-      // this.$router.push('/about')
     }
    
   }
@@ -77,7 +80,7 @@ export default {
       width: 46%;
       max-width: 300px;
       margin: 2%;
-      border: 1px solid red;
+      background: rgba(237, 237, 237, 0.601);
       border-radius: 5px;
       padding: 15px;
       text-align: center;

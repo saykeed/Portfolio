@@ -4,11 +4,15 @@
         <div class="project">
             <h1>Time to talk work! </h1>
             <p>
-                I like to try out new tools and technologies to create apps/sites that somehow make my/someone else's life easier. Below are some of the projects that I loved working on. Also, I'm extremely grateful to the entire Open Source community for all the amazing stuff that it provides us and makes it possible for everyone to create amazing things. I love contributing to Open Source whenever I can.
+                I like to try out new tools and technologies to create apps/sites that somehow make mylife/someone else's life easier. Below are some of the projects that I have worked on. Also, I'm extremely grateful to the entire Open Source community for all the amazing stuff that it provides us and makes it possible for everyone to create amazing things. I hope and look forward to contribute to Open Source whenever I can.
             </p>
 
             <div class="portBox">
-                <Portfolio />
+                <Portfolio 
+                    v-for="project in projects"
+                    :key="project.intro"
+                    :project="project"
+                />
             </div>
         </div>
         <Footer />
@@ -17,7 +21,36 @@
 
 <script>
 export default {
-
+    data() {
+        return {
+            projects: [
+                {
+                    title: 'Shopify(E-commerce)',
+                    intro: 'One of my mentor gave me this task to work on to improve my working with API and my front end skill',
+                    imgUrl: 'shopify',
+                    liveUrl: 'https://saykeedshopify.netlify.app/',
+                    gitCodeUrl: 'https://github.com/saykeed/E-commerce.git',
+                    description: 'An E-commerce web app that has the functionlity of a real e-commerce app. The app is fully responsive. It uses Fake store API for fetching product. I learnt a lot while working on this project as i got to implement things i have never implemented before. Technologies used includes Vue/Nuxt, Vuex, Firebase for the authentication, also integrated Paystack for making payment(not real money) etc'
+                },
+                {
+                    title: 'Google Meet Clone',
+                    intro: 'I decided to try this when i came across the WEBRTC documentation and i did not regret doing so as the project gave me so much joy.',
+                    imgUrl: 'meetclone',
+                    liveUrl: 'https://gmeetcloneapp.netlify.app',
+                    gitCodeUrl: 'https://github.com/saykeed/gmeet-clone-updated.git',
+                    description: 'This is one of the project that has help to improve my problem solving skill, as it was very challening because the documentation was not stright forward. I had to do a lot of research on my own before i was able to get it right, even though i am not through with the project, i have managed to make it work on devices with the same internet connection and i am still working on it to make it work on devices with different internet connection. Built with vue and i used firebase as the signalling server'
+                },
+                {
+                    title: 'Photography Website',
+                    intro: 'Built for my area brother who is into photography hoping he would later on get a domain and host it.',
+                    imgUrl: 'ikbo',
+                    liveUrl: 'https://ikbomedia.netlify.app/',
+                    gitCodeUrl: 'https://github.com/saykeed/ikbo-photography.git',
+                    description: 'A photography werbsite  made out of love for my area brother, built with vue.'
+                }
+            ]
+        }
+    }
 }
 </script>
 
@@ -42,7 +75,7 @@ export default {
         font-family: museo-sans,sans-serif;
     }
     .portBox{
-        margin-top: 100px;
+        margin-top: 50px;
     }
     
 </style>

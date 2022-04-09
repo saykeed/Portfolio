@@ -8,6 +8,7 @@
             </p>
             <p>Email: saykeed@gmail.com</p>
             <div class="contactBtn">
+                <a href="mailto:saykeed@gmail.com"><i class="fa fa-envelope"></i></a>
                 <a 
                     v-for="link in links"
                     :key="link.route"
