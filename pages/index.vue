@@ -106,6 +106,7 @@ export default {
     .linkbox img.svgs{
       width: 100px;
       position: absolute;
+      opacity: 0;
     }
     .linkbox .links{
       text-decoration: none;
