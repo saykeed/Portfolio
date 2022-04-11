@@ -47,7 +47,7 @@ export default {
     // where x stands for the route path and classname for each svg
     routePage(x) {
       gsap.to("img." + x, {
-        scale: 20,
+        scale: 30,
         duration: 0.6,
         onComplete: this.routeToPage,
         ease: "power4.inOut",
