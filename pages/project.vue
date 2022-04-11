@@ -1,25 +1,32 @@
 <template>
     <div class="aboutProject">
         <Header />
-        <div class="project">
-            <h1>Time to talk work! </h1>
-            <p>
-                I like to try out new tools and technologies to create apps/sites that somehow make mylife/someone else's life easier. Below are some of the projects that I have worked on. Also, I'm extremely grateful to the entire Open Source community for all the amazing stuff that it provides us and makes it possible for everyone to create amazing things. I hope and look forward to contribute to Open Source whenever I can.
-            </p>
+            <transition
+                appear=""
+                @before-enter="beforeEnter"
+                @enter="enter"
+            >
+                <div class="project">
+                    <h1>Time to talk work! </h1>
+                    <p>
+                        I like to try out new tools and technologies to create apps/sites that somehow make mylife/someone else's life easier. Below are some of the projects that I have worked on. Also, I'm extremely grateful to the entire Open Source community for all the amazing stuff that it provides us and makes it possible for everyone to create amazing things. I hope and look forward to contribute to Open Source whenever I can.
+                    </p>
 
-            <div class="portBox">
-                <Portfolio 
-                    v-for="project in projects"
-                    :key="project.intro"
-                    :project="project"
-                />
-            </div>
-        </div>
+                    <div class="portBox">
+                        <Portfolio 
+                            v-for="project in projects"
+                            :key="project.intro"
+                            :project="project"
+                        />
+                    </div>
+                </div>
+            </transition>
         <Footer />
     </div>
 </template>
 
 <script>
+import gsap from 'gsap'
 export default {
     data() {
         return {
@@ -49,6 +56,21 @@ export default {
                     description: 'A photography werbsite  made out of love for my area brother, built with vue.'
                 }
             ]
+        }
+    },
+    methods: {
+        beforeEnter(el) {
+            el.style.opacity = 0 
+            el.style.transform = 'translateY(70px)'
+        },
+        enter(el, done) {
+            gsap.to(el, {
+                duration: 1,
+                y: 0,
+                opacity: 1,
+                ease: "power2.inOut",
+                onComplete: done
+            })
         }
     }
 }
@@ -80,8 +102,3 @@ export default {
     
 </style>
 
-/*   
-
-
-
-*/

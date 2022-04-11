@@ -30,10 +30,10 @@ export default {
   data() {
     return {
       links: [
-        {head: 'I\'m Sherif', para: 'I\'m a Front-end Developer. Click to know more.', route: '/about', svgClass: 'about', delay: 2},
+        {head: 'I\'m Sherif', para: 'I\'m a Front-end Developer. Click to know more.', route: '/about', svgClass: 'about', delay: 1},
         {head: 'Projects and Contribution', para: 'Check out some of the projects I have worked on.', route: '/project', svgClass: 'project', delay: 3},
         // {head: 'Writings', para: 'Check out some of my writings.', route: '/other', svgClass: 'other'},
-        {head: 'Get in touch!', para: 'I\'m friendly, Let\'s talk!.', route: '/contact', svgClass: 'contact', delay: 1}
+        {head: 'Get in touch!', para: 'I\'m friendly, Let\'s talk!.', route: '/contact', svgClass: 'contact', delay: 2}
       ]
     }
   },
@@ -44,11 +44,11 @@ export default {
         duration: 0.1
       })
     },
-     routeToPage(page) {
+    routeToPage(page) {
       this.$router.push(page)
     },
     // where x stands for the route path and classname for each svg
-    async routePage(x) {
+    routePage(x) {
       gsap.to("img." + x, {
         scale: 20,
         duration: 0.6,
@@ -70,23 +70,26 @@ export default {
       
     },
     beforeEnter(el) {
-      el.style.opacity = 0 
-      el.style.transform = 'scale(0.1)'
-    },
-    enter(el, done) {
-      gsap.to(el, {
-        duration: 0.6,
-        scale: 1,
-        opacity: 1,
-        ease: "power3.inOut",
-        onComplete: done,
-        delay: 0.3 * el.dataset.index
-      })
-    }
+        el.style.opacity = 0 
+        el.style.transform = 'scale(0.1)'
+        console.log('beforeenter')
+      },
+      enter(el, done) {
+        gsap.to(el, {
+          duration: 0.6,
+          scale: 1,
+          opacity: 1,
+          ease: "power3.inOut",
+          onComplete: done,
+          delay: 0.3 * el.dataset.index
+        })
+        console.log('enter')
+      }
   },
-  mounted() {
-      this.resetAnimation()
-  }
+  mounted() { 
+      // this.resetAnimation()
+      console.log('mounted')
+  },
   
 }
 </script>
@@ -124,6 +127,7 @@ export default {
       position: relative;
       color: black;
       cursor: pointer;
+      z-index: 1;
     }
     .index .links:hover{
        background: rgba(236, 222, 222, 0.675);
@@ -131,24 +135,34 @@ export default {
     .index .links img.svgs{
       width: 100px;
       position: absolute;
-      /* z-index: -1; */
+      z-index: -1;
+    }
+
+
+    @keyframes smallAbout {
+      from{top: -30px; left: 30px;}
+      to{top: -80px; left: 0;}
+    }
+    @keyframes smallProject {
+      from{top: -30px; right: 30px;}
+      to{top: -80px; right: 0;}
+    }
+    @keyframes smallContact {
+      from{bottom: -30px; right: 30px;}
+      to{bottom: -80px; right: 0;}
     }
 
     .index img.about{
-      top: -80px;
-      left: 0
+      animation: smallAbout 1s ease-in-out;
+      animation-fill-mode: forwards;
     }
     .index img.project{
-      top: -80px;
-      right: 0
+      animation: smallProject 1s ease-in-out;
+      animation-fill-mode: forwards;
     }
-    /* .index img.other{
-      bottom: -80px;
-      left: 0
-    } */
     .index img.contact{
-      bottom: -80px;
-      right: 0
+      animation: smallContact 1s ease-in-out;
+      animation-fill-mode: forwards;
     }
     .linkdiv p{
       color: rgba(0, 0, 0, 0.793);

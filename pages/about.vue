@@ -34,14 +34,14 @@ export default {
     methods: {
         beforeEnter(el) {
             el.style.opacity = 0 
-            el.style.transform = 'translateY(30px)'
+            el.style.transform = 'translateY(70px)'
         },
         enter(el, done) {
             gsap.to(el, {
-                duration: 0.6,
+                duration: 1,
                 y: 0,
                 opacity: 1,
-                ease: "power3.inOut",
+                ease: "power2.inOut",
                 onComplete: done
             })
         }
