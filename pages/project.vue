@@ -45,7 +45,7 @@ export default {
                     imgUrl: 'meetclone',
                     liveUrl: 'https://gmeetcloneapp.netlify.app',
                     gitCodeUrl: 'https://github.com/saykeed/gmeet-clone-updated.git',
-                    description: 'This is one of the project that has help to improve my problem solving skill, as it was very challening because the documentation was not stright forward. I had to do a lot of research on my own before i was able to get it right, even though i am not through with the project, i have managed to make it work on devices with the same internet connection and i am still working on it to make it work on devices with different internet connection. Built with vue and i used firebase as the signalling server'
+                    description: 'This is one of the project that has help to improve my problem solving skill, as it was very challenging because the documentation was not straight forward. I had to do a lot of research on my own before i was able to get it right, even though i am not through with the project, i have managed to make it work on devices with the same internet connection and i am still working on it to make it work on devices with different internet connection. Built with vue and i used firebase as the signalling server'
                 },
                 {
                     title: 'Photography Website',

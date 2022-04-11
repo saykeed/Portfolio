@@ -38,5 +38,14 @@ export default {
         top: 50%;
         transform: translateY(-50%);
         box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+        cursor: pointer;
+    }
+    .header i:hover{
+        background: rgba(255, 255, 255, 0.279);
+        color: white;
+    }
+    .header i:active{
+        background: rgba(255, 255, 255, 0.279);
+        color: white;
     }
 </style>
