@@ -191,9 +191,3 @@ export default {
     }
 </style>
 
-
-/*   
-
-<img :class="`svgs ${link.svgClass}`" :src="require(`@/assets/svg/${link.svgClass}.svg`)" alt="">
-
-*/
