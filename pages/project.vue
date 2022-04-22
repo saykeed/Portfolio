@@ -54,6 +54,14 @@ export default {
                     liveUrl: 'https://ikbomedia.netlify.app/',
                     gitCodeUrl: 'https://github.com/saykeed/ikbo-photography.git',
                     description: 'A photography werbsite  made out of love for my area brother, built with vue.'
+                },
+                {
+                    title: 'My Portfolio Website',
+                    intro: 'Built to tell people more about me and to showcase the project i have worked on.',
+                    imgUrl: 'portfolio',
+                    liveUrl: 'https://saykeed.netlify.app',
+                    gitCodeUrl: 'https://github.com/saykeed/Portfolio.git',
+                    description: 'Ofcoure it made the list because i had actually built a replica of someone else portfolio. It all started when i came across the Portfolio on Github and i was like wow, i have to challenge myself with this, especially the animation part. Well i\'m glad i\'m able to build it even though i added some animations of my own.'
                 }
             ]
         }

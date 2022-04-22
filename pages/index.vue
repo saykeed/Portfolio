@@ -48,7 +48,7 @@ export default {
     routePage(x) {
       gsap.to("img." + x, {
         scale: 30,
-        duration: 0.6,
+        duration: 0.8,
         onComplete: this.routeToPage,
         ease: "power4.inOut",
         zIndex: 99999,
