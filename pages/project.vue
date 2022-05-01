@@ -48,6 +48,14 @@ export default {
                     description: 'This is one of the project that has help to improve my problem solving skill, as it was very challenging because the documentation was not straight forward. I had to do a lot of research on my own before i was able to get it right, even though i am not through with the project, i have managed to make it work on devices with the same internet connection and i am still working on it to make it work on devices with different internet connection. Built with vue and i used firebase as the signalling server'
                 },
                 {
+                    title: 'Keji Styling(CRUD APP)',
+                    intro: 'I built this for a friend of mine who sells clothes',
+                    imgUrl: 'kejistyling',
+                    liveUrl: 'https://kejistyling.netlify.app',
+                    gitCodeUrl: 'https://kejistyling.netlify.app',
+                    description: 'Yeah, this is an e-commerce app with CRUD functionality, it is built for a friend of mine who post images of jeans on whatsapp status, then i decided to build her an online store so she can post her products there, and then she can post just the link to the site on her whatsapp status. As the admin she gets to post, update, and delete products, the users also get to add to wishlist and cart and can also complete their order by getting redirected to whatsapp with pre-filled message containg the details of the product in their cart or by a phone call. Built with vue, firebase for authentication, '
+                },
+                {
                     title: 'Photography Website',
                     intro: 'Built for my area brother who is into photography hoping he would later on get a domain and host it.',
                     imgUrl: 'ikbo',
