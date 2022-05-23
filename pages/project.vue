@@ -33,11 +33,11 @@ export default {
             projects: [
                 {
                     title: 'Whatsapp Clone',
-                    intro: 'After coming across web sockets and working with it to implement a small chat app, I decided to implement a chat app with Whatsapp Clone',
+                    intro: 'After coming across web sockets and working with it to implement a small chat app, I decided to implement a chat app with Whatsapp Interface',
                     imgUrl: 'whatsappclone',
                     liveUrl: 'https://saykeedwhatsapp.netlify.app',
                     gitCodeUrl: 'https://github.com/saykeed/whatsapp-clone.git',
-                    description: 'A chat app that allows users to register with their phone number and then chat with fellow registered users, this project was another kinda project that taught me a lot in terms of logical reasoning because at some point i was stuck on how to structure my firebase database to implement direct messageing but i eventually solved. Also i am hoping to add voice note to it in future. Build with vue and firebase'
+                    description: 'A chat app that allows users to register with their phone number and then chat with fellow registered users, this project was another kinda project that taught me a lot in terms of logical reasoning because at some point i was stuck on how to structure my firebase database to implement direct messageing but i eventually solved it. Also i am hoping to add voice note to it in future. Built with vue and firebase'
                 },
                 {
                     title: 'Shopify(E-commerce)',
