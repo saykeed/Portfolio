@@ -31,6 +31,14 @@ export default {
     data() {
         return {
             projects: [
+				{
+                    title: 'Game-center',
+                    intro: 'I tried to build a multiplaying gaming app with some other amazing features',
+                    imgUrl: 'gamecenter',
+                    liveUrl: 'https://saykeed-gamecenter.netlify.app/',
+                    gitCodeUrl: 'https://github.com/saykeed/gamecenter.git',
+                    description: 'A gaming app that support multiplaying, it also has a chat and video call functionality. Built with vue and node js for the server. Used socket io for transfering data and peer js for the video call'
+                },
                 {
                     title: 'Whatsapp Clone',
                     intro: 'After coming across web sockets and working with it to implement a small chat app, I decided to implement a chat app with Whatsapp Interface',
