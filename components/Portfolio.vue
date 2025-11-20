@@ -7,7 +7,7 @@
         <img :src="require(`@/assets/img/${project.imgUrl}.png`)" alt="project screenshot">
         <div class="portBtn">
             <a :href="project.liveUrl" target="blank">Live Demo</a>
-            <a :href="project.gitCodeUrl" target="blank">Code on Github</a>
+            <a v-if="project?.gitCodeUrl !== null" :href="project.gitCodeUrl" target="blank">Code on Github</a>
         </div>
         <p>
             {{project.description}}
